@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranish Acharya | Portfolio</title>
+    <style>
+
+        /*Responsive Design*/
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+    }
+
+    .about {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .about-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-text h2 {
+        font-size: 1.3rem;
+    }
+
+    .menu-button {
+        top: 20px;
+        left: 20px;
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .quick-menu {
+        top: 60px;
+        left: 20px;
+        font-size: 0.9rem;
+    }
+
+    .project-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .project-card .check-out {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-button {
+        top: 15px;
+        left: 15px;
+        font-size: 0.8rem;
+    }
+
+    .quick-menu {
+        top: 55px;
+        left: 15px;
+    }
+
+    header {
+        padding: 3rem 1rem;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+
+    .testimonial-box {
+        padding: 1.2rem;
+    }
+
+    .testimonial-box img {
+        width: 50px;
+        height: 50px;
+    }
+}
+    /*Home Tag Edit*/
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        header {
+            background: url('herta.png') center/cover no-repeat;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            color: #fff;
+        }
+
+        header p {
+            font-size: 1.4rem;
+            color: #ddd;
+        }
+
+        section {
+            padding: 3rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .image-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            flex-shrink: 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0 50px 0 50px;
+            transition: transform 0.5s ease;
+            z-index: 2;
+            position: relative;
+        }
+
+        .lotus-petal {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(30,144,255,0.1);
+            border-radius: 0 50px 0 50px;
+            transform-origin: center;
+            transition: transform 0.5s ease;
+            z-index: 1;
+        }
+
+        .lotus-top {
+            top: -10px;
+            left: 0;
+        }
+
+        .lotus-bottom {
+            bottom: -10px;
+            left: 0;
+        }
+
+        .image-container:hover img {
+            transform: scale(2);
+            z-index: 3;
+        }
+          .image-container:hover{
+            margin-right: 10%;
+            transition: 1s ease;
+        }
+
+        .image-container:hover .lotus-top {
+            transform: translateY(-50px);
+            transform: scale(2.5);
+        }
+
+        .image-container:hover .lotus-bottom {
+            transform: translateY(50px);
+            transform: scale(2.5);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-text h1 {
+            font-size: 2.2rem;
+            margin: 0.5rem 0;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        /*Projects and Work Section*/
+
+    .projects {
+    width: 100%; 
+    min-height: 100vh;
+    font-style: italic;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; /* Center align content */
+    padding: 2rem; /* Optional padding */
+}
+
+.projects h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.project-grid {
+    display: flex;
+    flex-direction: row;   /* Default value, but explicitly shows intent */
+    justify-content: center;  /* Center all items in the row */
+    align-items: flex-start;  /* Align items to the top */
+    gap: 2rem;               /* Space between cards */
+    width: 130%;             /* Fill the container */
+    overflow-x: auto;        /* Add horizontal scroll if needed */
+    text-align: center;
+    padding: 1rem 0;
+}
+
+
+        .project-card {
+            background-color: #1e1e1e;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+        .project-card img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+        }
+        .project-card .check-out{
+            padding: 15px;
+            margin: 10px;
+            font-size: 20px;
+            text-transform: capitalize;
+            background-color: #fff;
+            border-radius: 10px;
+            border: none;
+        }
+        .project-card .check-out a{
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #000;
+            font-weight: 1000;
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+        }
+
+        .project-card p {
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+
+
+        /*Skill Section*/
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+
+        }
+
+        .skill-card {
+            background-color: #1e1e1e;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+        .skills h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #fff; 
+        }
+
+        .skill-card h3 {
+            margin-top: 0;
+        }
+
+        .skill-card p {
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+
+        .testimonials {
+            margin-top: 3rem;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-box {
+            background-color: #1e1e1e;
+            border-left: 5px solid #1e90ff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .testimonial-box::before {
+            content: '“';
+            font-size: 4rem;
+            color: #1e90ff;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+        }
+
+        .testimonial-box img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            top: -30px;
+            right: 20px;
+            border: 2px solid #1e90ff;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-box img:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-author {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #aaa;
+        }
+
+        .contact {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .contact a {
+            color: #1e90ff;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            padding-bottom: 1rem;
+        }
+
+    .menu-button {
+        position: fixed;
+        top: 90%;
+        left: 20px;
+        background-color: #1e90ff;
+        color: white;
+        padding: 0.6rem 1rem;
+        border: none;
+        border-radius: 5px;
+        z-index: 1000;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        transition: background 0.3s ease;
+    }
+
+    .menu-button:hover {
+        background-color: #187bcd;
+    }
+
+    .quick-menu {
+        position: fixed;
+        top: 65%;
+        left: 20px;
+        background-color: #1f1f1f;
+        border: 1px solid #333;
+        border-radius: 10px;
+        padding: 1rem;
+        z-index: 999;
+        display: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    .quick-menu a {
+        color: #1e90ff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.2s ease;
+    }
+
+    .quick-menu a:hover {
+        color: #63b3ed;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    </style>
+</head>
+<body>
+<button class="menu-button" onclick="toggleMenu()">Menu</button>
+<div class="quick-menu" id="quickMenu">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+</div>
+
+    <header>
+        <h1><span style="color: grey;">FORT</span>POLIO</h1>
+        <p>Graphic Designer & VFX Artist</p>
+    </header>
+
+    <section class="about" id="about">
+        <div class="image-container">
+            <img src="me.jpg" alt="Pranish Acharya">
+            <div class="lotus-petal lotus-top"></div>
+            <div class="lotus-petal lotus-bottom"></div>
+        </div>
+        <div class="about-text">
+            <h2>About Me</h2>
+            <h1>HI,I AM PRANISH ACHARYA</h1>
+            <p>A passionate Graphic Designer and VFX Artist. With over 4 years of experience in the creative industry, I bring visual ideas to life through design and animation. Whether you're looking for immersive visuals or sleek designs, I deliver with precision and creativity. If you choose to hire me, I promise you won’t be disappointed.</p>
+        </div>
+    </section>
+
+        <section class="projects" id="projects">
+            <h2>MY Work</h2>
+             <div class="project-grid">
+        <div class="project-card">
+            <img src="herta.png" alt="animations">
+            <h3>Animations</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button class="check-out"><a href="#about">Checkout</a></button>
+        </div>
+        <div class="project-card">
+            <img src="herta.png" alt="vfx">
+            <h3>Visual Effects</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button class="check-out"><a href="#about">Checkout</a></button>
+        </div>
+
+        <div class="project-card">
+            <img src="herta.png" alt="cgi">
+            <h3>CGI</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button class="check-out"><a href="#about">Checkout</a></button>
+    </div>
+</div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2>Skills & Tools</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Blender</h3>
+                <p>I have been using Blender for over 3 years to create 3D models, animation, and simulations. It’s my go-to tool for building complex scenes and dynamic VFX work.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Unreal Engine</h3>
+                <p>With 2 years of experience in Unreal Engine, I design immersive environments and real-time VFX for cinematic storytelling and experimental projects.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Adobe Illustrator</h3>
+                <p>I've been using Illustrator for more than 4 years to create logos, vector graphics, and brand assets. It’s essential in my daily workflow for high-quality graphic design.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2>My Previous Employers</h2>
+        <div class="testimonial-box">
+            <p>Pranish is an exceptional designer with an eye for detail and creativity that goes beyond expectations.</p>
+            <span class="testimonial-author">— John Doe</span>
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe">
+        </div>
+        <div class="testimonial-box">
+            <p>Working with Pranish was a smooth and professional experience. He delivers quality, fast.</p>
+            <span class="testimonial-author">— John Doe</span>
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="John Doe">
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:Pranishacharya9@Gmail.com">Pranishacharya9@Gmail.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Pranish Acharya. All rights reserved.</p>
+    </footer>
+
+    <script>
+    function toggleMenu() {
+        const menu = document.getElementById('quickMenu');
+        menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+</script>
+
+</body>
+</html>
