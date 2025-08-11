@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LORD ASTAROTH - Upload</title>
+  <link rel="stylesheet" href="upstyle.css">
+  <!-- FontAwesome for social icons -->
+  <script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="site-logo">
+      <h1 class="name">
+        <img src="astaroth.png" alt="Astaroth Logo" />
+        <span>LORD </span>ASTAROTH
+      </h1>
+    </div>
+    <nav class="nav-bar" aria-label="Main navigation">
+      <a class="press" href="index.html">Home</a>
+      <a class="press" href="gallery.html">Gallery</a>
+      <a class="press" href="reviews.html">Reviews</a>
+    </nav>
+  </header>
+
+  <!-- Upload Section -->
+  <section class="page-content" role="main" aria-labelledby="uploadTitle">
+    <h2 id="uploadTitle">Upload Your Image</h2>
+
+    <form enctype="multipart/form-data" method="POST" onsubmit="return false;" aria-describedby="uploadInstructions">
+      <input type="file" accept="image/*" id="imageUpload" />
+      <label for="imageUpload" class="custom-file-label" id="fileLabel">Choose a file</label>
+
+      <textarea name="description" id="Textarea-" placeholder="Describe your image (max 300 chars)" maxlength="300" aria-label="Image description"></textarea>
+
+      <input class="uploadbtn" type="submit" value="Upload" aria-label="Upload image" />
+    </form>
+
+    <img id="preview" alt="Image Preview" aria-live="polite" />
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact" aria-label="Contact section">
+    <h2 class="section-title">Get In Touch</h2>
+
+    <nav class="nav-bar-bottom" aria-label="Footer navigation">
+      <a href="index.html" class="press-bottom">Home</a>
+      <a href="gallery.html" class="press-bottom">Gallery</a>
+      <a href="reviews.html" class="press-bottom">Reviews</a>
+    </nav>
+
+    <div class="contact-info">
+      <p class="email">
+        Email us at: 
+        <a href="mailto:Pranishacharya08@gmail.com">Pranishacharya08@gmail.com</a>
+      </p>
+      <div class="social-icons" aria-label="Social media links">
+        <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener" aria-label="Twitter" class="social-link">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://x.com/yourhandle" target="_blank" rel="noopener" aria-label="X" class="social-link">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+      </div>
+    </div>
+
+    <form class="inpu" action="#" method="post" aria-label="Contact form">
+      <h3>Send a Message</h3>
+      <div class="sec">
+        <input type="text" name="name" placeholder="Your Name" required />
+      </div>
+      <div class="sec">
+        <input type="email" name="email" placeholder="Your Email" required />
+      </div>
+      <div class="sec">
+        <textarea name="message" placeholder="Your Message Here" required></textarea>
+      </div>
+      <div class="sec">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </section>
+
+  <script>
+    const imageInput = document.getElementById('imageUpload');
+    const preview = document.getElementById('preview');
+    const fileLabel = document.getElementById('fileLabel');
+
+    imageInput.addEventListener('change', () => {
+      const file = imageInput.files[0];
+      if (file) {
+        fileLabel.textContent = file.name;
+        if (file.type.startsWith('image/')) {
+          const reader = new FileReader();
+          reader.onload = e => {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+          };
+          reader.readAsDataURL(file);
+        } else {
+          preview.style.display = 'none';
+        }
+      } else {
+        fileLabel.textContent = "Choose a file";
+        preview.style.display = 'none';
+      }
+    });
+
+    document.querySelector('.uploadbtn').addEventListener('click', () => {
+      if (imageInput.files.length === 0) {
+        alert("Please select an image to upload.");
+      } else {
+        alert("Image uploaded successfully (simulated)!");
+      }
+    });
+  </script>
+</body>
+</html>
