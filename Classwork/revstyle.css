@@ -1,0 +1,211 @@
+/* THE GENEREAL SECTION */
+html,
+body {
+  height: auto;
+  margin-top: 0px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  scroll-behavior: smooth;
+  background: #fefefe;
+  color: #333;
+}
+/* FLOATING NAV BAR SECTION */
+.header {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(82, 241, 244, 0.605);
+  color: #00796b;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 121, 107, 0.2);
+  z-index: 1000;
+}
+.name {
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #004d40;
+}
+.name img {
+  width: 70px;
+  cursor: pointer;
+  height: 70px;
+  margin: -10px 10px -30px 0;
+  position: relative;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+}
+.name img:hover {
+  transform: translateY(-5px);
+  transition: 0.5s;
+}
+/* THE BUTTIONS ON FLOATING NAV BAR SECTION */
+.nav-bar {
+  display: flex;
+  gap: 10px;
+}
+.press {
+  color: #000000;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+  border: 2px solid transparent;
+  font-weight: 600;
+}
+.press:hover {
+  background-color: #00796b;
+  color: white;
+  border-color: #004d40;
+}
+/* FIRST PAGE SECTION */
+.background {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100vh - 70px);
+  background: linear-gradient(to right, rgba(152, 211, 237, 0.8), rgba(0, 0, 0, 0.1)),url('bgimage1.webp');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  border-radius: 0 0 12px 12px;
+  color: #004d40;
+  padding: 40px 60px;
+  box-shadow: 0 6px 15px rgba(0, 121, 107, 0.3);
+  text-align: left;
+  gap: 40px;
+}
+/* TESTIMONIALS SECTION */
+.testimonials {
+  background-color: #e0f2f1;
+  color: #004d40;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 10rem auto;
+  max-width: 1200px;
+}
+.testimonials h2 {
+  font-size: 2rem;
+  position: relative;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #00796b;
+}
+/* The ::after here is acting like a hidden extra layer attached to your */
+.testimonials h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 22%;
+  height: 3px;
+  background-color: #004d40;
+  transition: transform 0.4s ease;
+}
+.testimonials h2:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+/* THIS IS THE TESTIMONIAL CARD WHERE THE TEXT IS */
+.testimonial-box {
+  background-color: #ffffff;
+  width: 200px;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 77, 64, 0.15);
+  transition: transform 0.3s ease;
+  color: #004d40;
+}
+.testimonial-box:hover {
+  transform: translateY(-5px);
+}
+.testimonial-box p {
+  font-size: 1rem;
+  color: #00695c;
+  margin-bottom: 1.5rem;
+}
+/*THE USER NAME*/
+.testimonial-author {
+  font-style: italic;
+  color: #004d40cc;
+  font-size: 0.9rem;
+}
+/*THE USER IMAGE CSS*/
+.testimonial-box img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: -30px;
+  right: 20px;
+  border: 2px solid #00796b;
+}
+.testimonial-box img:hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.05);
+}
+/*THE SMALL GREEN BOX THAT SAYS REVIEW*/
+.review-tag {
+  position: absolute;/*THIS REMOVES THE TAG FROM THE GRID AND MAKES IT FREELY FLOAT*/
+  top: -15px;
+  left: 20px;
+  background-color: #00796b;
+  color: white;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 121, 107, 0.4);
+}
+/* RESPOSIVE ADJUSMENTS FOR THE CONTACT SECTION CREDIT: CHAT GPT*/
+@media (min-width:480px) and (max-width: 768px) {
+  .skills h2,
+  .gallery h2,
+  .testimonials h2,
+  .contact h2 {
+    font-size: 1.5rem;
+  }
+  .goto {
+    margin: 20px auto;
+    text-align: center;
+  }
+  .goto a {
+    width: 80%;
+    display: inline-block;
+  }
+  .inpu {
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  .sec input,
+  .sec textarea,
+  .sec button {
+    width: 90%;
+    margin: 10px auto;
+  }
+  .testimonial-box img {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    right: 10px;
+  }
+  .contact {
+    height: auto;
+  }
+}
