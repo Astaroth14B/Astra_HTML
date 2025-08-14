@@ -68,7 +68,7 @@ body {
   justify-content: space-between;
   align-items: center;
   min-height: calc(100vh - 70px);
-  background: linear-gradient(to right, rgba(152, 211, 237, 0.8), rgba(0, 0, 0, 0.1)),url('bgimage1.webp');
+  background: linear-gradient(to right, rgba(121, 205, 241, 0.8), rgba(0, 0, 0, 0.1)),url('bgimage1.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
