@@ -1,0 +1,26 @@
+[
+  {
+    "id": 5,
+    "title": "asdfghi",
+    "description": "asdrt",
+    "imageUrl": "http://localhost:3000/uploads/1769755470936.png",
+    "userSerial": null,
+    "createdAt": "2026-01-30T06:44:30.000Z",
+    "updatedAt": "2026-01-30T06:44:30.000Z",
+    "uploader": null
+  },
+  {
+    "id": 6,
+    "title": "dfghjkl;",
+    "description": "sdfghjkl",
+    "imageUrl": "http://localhost:3000/uploads/1769771562535.png",
+    "userSerial": "000000000005",
+    "createdAt": "2026-01-30T11:12:42.000Z",
+    "updatedAt": "2026-01-30T11:12:42.000Z",
+    "uploader": {
+      "username": "ADMIN",
+      "profilePic": "http://localhost:3000/uploads/1769771533863.png",
+      "serialNumber": "000000000005"
+    }
+  }
+]

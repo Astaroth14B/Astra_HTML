@@ -1,0 +1,28 @@
+{
+  "totalArtworks": 2,
+  "totalUsers": 2,
+  "artworks": [
+    {
+      "id": 5,
+      "title": "asdfghi",
+      "userSerial": null
+    },
+    {
+      "id": 6,
+      "title": "dfghjkl;",
+      "userSerial": "000000000005"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "Astral_Modulator_3476&2347",
+      "serialNumber": "000000000001"
+    },
+    {
+      "id": 5,
+      "username": "ADMIN",
+      "serialNumber": "000000000005"
+    }
+  ]
+}
